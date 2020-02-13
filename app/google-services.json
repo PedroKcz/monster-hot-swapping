@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "887388291373",
+    "firebase_url": "https://monsters-f0de0.firebaseio.com",
+    "project_id": "monsters-f0de0",
+    "storage_bucket": "monsters-f0de0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:887388291373:android:4732d5704d5a37545a13a4",
+        "android_client_info": {
+          "package_name": "com.pedrokcz.hotswappingexample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "887388291373-m1prue8kpgbsbukgltr7q7gb2k7se5p3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIoK35azDxNBuPzi5LlpoUhPUyrrC3gKc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "887388291373-m1prue8kpgbsbukgltr7q7gb2k7se5p3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
