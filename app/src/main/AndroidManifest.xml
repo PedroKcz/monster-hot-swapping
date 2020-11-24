@@ -15,7 +15,7 @@
 
         <activity android:name=".presentation.HomeView" />
 
-        <activity android:name=".presentation.SplashView">
+        <activity android:name=".presentation.MyActivity">
             <intent-filter>
 
                 <action android:name="android.intent.action.MAIN" />

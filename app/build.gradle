@@ -42,8 +42,14 @@ dependencies {
     implementation "org.koin:koin-android-scope:$koin_version"
     implementation "org.koin:koin-android-viewmodel:$koin_version"
 
-    implementation "androidx.recyclerview:recyclerview:1.1.0"
-    implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.google.firebase:firebase-analytics:18.0.0'
     implementation 'com.google.firebase:firebase-firestore:22.0.0'
+
+    implementation project(':home:data:digimon')
+    implementation project(':home:data:pokemon')
+    implementation project(':home:domain')
+    implementation project(':home:data')
+    implementation project(':home:presentation')
+    implementation project(':home')
+    implementation project(':app')
 }
