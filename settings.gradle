@@ -1,2 +1,8 @@
+include ':home:data:digimon'
+include ':home:data:pokemon'
+include ':home:domain'
+include ':home:data'
+include ':home:presentation'
+include ':home'
 include ':app'
 rootProject.name='Hot Swapping Example'

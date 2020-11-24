@@ -3,6 +3,7 @@ package com.pedrokcz.hotswappingexample.presentation
 import android.app.Application
 import android.content.Intent
 import com.google.firebase.firestore.FirebaseFirestore
+import com.pedrokcz.hotswappingexample.data.default.DefaultStrategy
 import com.pedrokcz.hotswappingexample.data.digimon.DigimonStrategy
 import com.pedrokcz.hotswappingexample.data.pokemon.PokemonStrategy
 import org.koin.android.ext.koin.androidContext
@@ -36,7 +37,7 @@ class MainApplication : Application() {
             when (strategy) {
                 "pokemon" -> PokemonStrategy()
                 "digimon" -> DigimonStrategy()
-                else -> PokemonStrategy()
+                else -> DefaultStrategy()
             }
         }
         viewModel(override = true) { HomeViewModel(get()) }
