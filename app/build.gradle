@@ -1,8 +1,9 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
-apply plugin: 'kotlin-kapt'
-apply plugin: 'com.google.gms.google-services'
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'com.google.gms.google-services'
+}
 
 android {
     compileSdkVersion 30
@@ -16,8 +17,23 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    dataBinding {
-        enabled = true
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+        useIR = true
+    }
+
+    buildFeatures {
+        compose true
+    }
+
+    composeOptions {
+        kotlinCompilerVersion '1.4.10'
+        kotlinCompilerExtensionVersion '1.0.0-alpha07'
     }
 }
 
@@ -45,11 +61,19 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics:18.0.0'
     implementation 'com.google.firebase:firebase-firestore:22.0.0'
 
+    implementation 'androidx.compose.ui:ui:1.0.0-alpha07'
+    implementation 'androidx.ui:ui-tooling:1.0.0-alpha07'
+    implementation 'androidx.compose.foundation:foundation:1.0.0-alpha07'
+    implementation 'androidx.compose.material:material:1.0.0-alpha07'
+    implementation 'androidx.compose.material:material-icons-core:1.0.0-alpha07'
+    implementation 'androidx.compose.material:material-icons-extended:1.0.0-alpha07'
+    implementation 'androidx.compose.runtime:runtime-livedata:1.0.0-alpha07'
+    implementation "androidx.compose.compiler:compiler:1.0.0-alpha07"
+
     implementation project(':home:data:digimon')
     implementation project(':home:data:pokemon')
     implementation project(':home:domain')
     implementation project(':home:data')
     implementation project(':home:presentation')
     implementation project(':home')
-    implementation project(':app')
 }

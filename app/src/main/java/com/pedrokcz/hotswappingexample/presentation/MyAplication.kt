@@ -5,7 +5,6 @@ import android.content.Intent
 import com.google.firebase.firestore.FirebaseFirestore
 import com.pedrokcz.digimon.DigimonStrategy
 import com.pedrokcz.pokemon.PokemonStrategy
-import com.pedrokcz.presentation.HomeActivity
 import com.pedrokcz.presentation.HomeViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -22,6 +21,7 @@ class MainApplication : Application() {
         startKoin {
             androidLogger()
             androidContext(this@MainApplication)
+            modules(getModule(null))
             FirebaseFirestore.getInstance()
                 .collection("v1")
                 .document("toggle")
@@ -33,7 +33,7 @@ class MainApplication : Application() {
         }
     }
 
-    private fun getModule(strategy: String) = module {
+    private fun getModule(strategy: String?) = module {
         single(override = true) {
             when (strategy) {
                 "pokemon" -> PokemonStrategy()
@@ -45,7 +45,7 @@ class MainApplication : Application() {
     }
 
     private fun getHomeIntent(): Intent {
-        return Intent(this, HomeActivity::class.java).apply {
+        return Intent(this, MyActivity::class.java).apply {
             addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         }
