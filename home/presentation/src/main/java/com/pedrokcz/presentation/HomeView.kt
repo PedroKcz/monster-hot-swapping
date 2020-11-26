@@ -27,9 +27,10 @@ import org.koin.androidx.compose.getViewModel
 fun HomeView(
     viewModel: HomeViewModel = getViewModel()
 ) {
-    val viewState = viewModel.state.collectAsState()
+    viewModel.interact(HomeEvent.Opened)
+    val state = viewModel.state.collectAsState()
 
-    LazyColumnFor(items = viewState.value.monsters) { item ->
+    LazyColumnFor(items = state.value.monsters) { item ->
         MonsterCard(item)
     }
 }
@@ -40,7 +41,7 @@ private fun MonsterCard(item: Monster) {
         shape = RoundedCornerShape(10.dp),
         elevation = 4.dp,
         modifier = Modifier.padding(16.dp).fillMaxWidth().clickable(
-            indication = RippleIndication(radius = 10.dp, color = Color.Gray),
+            indication = RippleIndication(color = Color.Gray),
             onClick = { }
         )
     ) {
